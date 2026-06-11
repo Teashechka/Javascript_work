@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця за малюнком</title>
+    <style>
+        table { border-collapse: collapse; margin-top: 20px; }
+        td { width: 30px; height: 30px; border: 1px solid #ccc; }
+        .darkblue { background-color: darkblue; }
+        .cyan { background-color: cyan; }
+    </style>
+</head>
+<body>
+    <h1>Завдання з таблицею</h1>
+    <div id="table-container"></div>
+    <br>
+    <a href="index.html">← Повернутися на головну</a>
+    <script>
+        function drawTable() {
+            const container = document.getElementById('table-container');
+            let tableHTML = '<table>';
+            for (let row = 0; row < 10; row++) {
+                tableHTML += '<tr>';
+                for (let col = 0; col < 10; col++) {
+                    const colorClass = (row + col >= 9) ? 'darkblue' : 'cyan';
+                    tableHTML += `<td class="${colorClass}"></td>`;
+                }
+                tableHTML += '</tr>';
+            }
+            tableHTML += '</table>';
+            container.innerHTML = tableHTML;
+        }
+        drawTable();
+    </script>
+</body>
+</html>
