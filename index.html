@@ -6,6 +6,49 @@
     <title>Document</title>
 </head>
 <body>
-    
+<script>
+        const lastName = prompt("Введіть ваше прізвище:");
+        const firstName = prompt("Введіть ваше ім'я:");
+        const patronymic = prompt("Введіть ваше по-батькові:");
+
+        if (lastName && firstName && patronymic) {
+            const fullName = `${lastName} ${firstName} ${patronymic}`;
+            if (confirm(`Чи вірно ви ввели дані: ${fullName}?`)) {
+                alert(`Добрий день, ${fullName}!`);
+            } else {
+                alert("Помилка: дані введено невірно або скасовано користувачем.");
+            }
+        } else {
+            alert("Помилка: ви заповнили не всі поля.");
+        }
+        const xInput = prompt("Введіть перше число (x):");
+        const yInput = prompt("Введіть друге число (y):");
+        const operator = prompt("Введіть арифметичну операцію (+, -, *, /):");
+        const x = parseFloat(xInput);
+        const y = parseFloat(yInput);
+        if (isNaN(x) || isNaN(y)) {
+            alert("Помилка: введені дані не є числами!");
+        } else {
+            let result;
+            let isValid = true;
+            switch (operator) {
+                case '+': result = x + y; break;
+                case '-': result = x - y; break;
+                case '*': result = x * y; break;
+                case '/':
+                    if (y === 0) {
+                        alert("Помилка: ділення на нуль неможливе!");
+                        isValid = false;
+                    } else {
+                        result = x / y;
+                    }
+                    break;
+                default:
+                    alert("Помилка: невірний знак операції!");
+                    isValid = false;
+            }
+            if (isValid) alert(`Результат: ${x} ${operator} ${y} = ${result}`);
+        }
+    </script>    
 </body>
 </html>
