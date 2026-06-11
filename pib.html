@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест JavaScript</title>
+</head>
+<body>
+    <h1>Натисніть кнопку, щоб запустити скрипт</h1>
+    <button onclick="runScript()">Запустити програму</button>
+    <script src="Javasc1.js"></script>
+    <script>
+        function runScript() {        
+            const lastName = prompt("Введіть ваше прізвище:");
+            const firstName = prompt("Введіть ваше ім'я:");
+            const patronymic = prompt("Введіть ваше по-батькові:");
+
+            if (lastName && firstName && patronymic) {
+                const fullName = `${lastName} ${firstName} ${patronymic}`;
+                const isConfirmed = confirm(`Чи вірно ви ввели дані: ${fullName}?`);
+                if (isConfirmed) {
+                    alert(`Добрий день, ${fullName}!`);
+                } else {
+                    alert("Помилка: дані введено невірно.");
+                }
+            } else {
+                alert("Помилка: ви заповнили не всі поля.");
+            }
+        }
+    </script>
+</body>
+</html>
