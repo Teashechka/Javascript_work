@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img {
+        height: 150px;
+        width: 150px;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      i = 0;
+      ris = new Array("car1.jpg", "car2.jpg", "car3.jpg");
+      function slideShow() {
+        if (i > 2) i = 0;
+        r = document.getElementById("slide");
+        r.src = ris[i];
+        i++;
+        setTimeout("slideShow()", 1500);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>слайд-шоу</h2>
+    <img id="slide" src="fmkto.jpg" />
+    <form>
+      <p><input type="button" value=" Почати " onClick="slideShow();" /></p>
+    </form>
+  </body>
+</html>
