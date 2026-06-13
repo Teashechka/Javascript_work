@@ -8,11 +8,9 @@
       }
     </style>
     <script>
-      function displ() {
-        // об'єкт р - елемент с id="fmkto"
-        p = document.getElementById("fmkto");
-        // змінюємо у об'єкта style властивість display
-        if (p.style.display == "none") {
+      function displ(id) {
+        let p = document.getElementById(id);
+        if (p.style.display === "none") {
           p.style.display = "block";
         } else {
           p.style.display = "none";
@@ -23,11 +21,11 @@
   <body>
     <p>
       <img src="fmkto.jpg" id="fmkto" /> <br /><br />
-      <input type="button" value="Відобразити / сховати рисунок" onclick="displ();" />
+      <input type="button" value="Відобразити / сховати рисунок" onclick="displ('fmkto');" />
     </p>
-  <div>
-    <img src="fmkto1.jpg" id="fmkto1" /> <br /><br />
-      <input type="button" value="Відобразити / сховати рисунок" onclick="displ();" />
-  </div>
+    <div>
+      <img src="fmkto1.jpg" id="fmkto1" /> <br /><br />
+      <input type="button" value="Відобразити / сховати рисунок" onclick="displ('fmkto1');" />
+    </div>
   </body>
 </html>
