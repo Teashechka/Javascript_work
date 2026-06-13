@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Зміна кольору блоку</title>
+    <style>
+        #myBox {
+            width: 250px;
+            height: 250px;
+            background-color: red;
+            border: 10px solid darkblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myBox">Червоний</div>
+    <button id="myButton">Змінити на блакитний</button>
+    <script>
+        const box = document.getElementById('myBox');
+        const button = document.getElementById('myButton');
+        let isRed = true;
+        button.addEventListener('click', function() {
+            if (isRed) {
+                box.style.backgroundColor = 'skyblue';
+                box.innerText = 'Блакитний';
+                button.innerText = 'Змінити на червоний';
+            } else {
+                box.style.backgroundColor = 'red';
+                box.innerText = 'Червоний';
+                button.innerText = 'Змінити на блакитний';
+            }
+            isRed = !isRed;
+        });
+    </script>
+</body>
+</html>
